@@ -4,10 +4,20 @@ from json import load
 from urllib.parse import urlencode
 from urllib.request import urlretrieve
 
-ResourceID 	= ""
-DomainID 	= ""
+# Frist thing you should to is generate an API Key, on your profile, copy it and paste below
 ApiKey		= ""
-Api 		= ""
+
+# You can get the ResourceID by creating a new A zone and after saving clicking on the edit link.
+# On the url the ResourceID will be shown. Copy it and paste below
+ResourceID 	= ""
+
+# Use this CURL call to get your Domain ID: https://api.linode.com/?api_key={api_key}&api_action=domain.list
+# Remeber to replace the above {api_key} with the one you pasted on ApiKey variable above.
+DomainID 	= ""
+
+# No need to change anything below this line
+
+Api 		= "https://api.linode.com/api/?api_key={0}&resultFormat=JSON"
 
 def getIp():
 	file, headers = urlretrieve("http://icanhazip.com/")
